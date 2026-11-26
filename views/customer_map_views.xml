@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_map" model="ir.ui.view">
+        <field name="name">res.partner.map</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <map string="Map"/>
+        </field>
+    </record>
+
+    <record id="view_partner_search_location" model="ir.ui.view">
+        <field name="name">res.partner.search.location</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="after">
+                <separator/>
+                <filter string="Located" name="located"
+                        domain="['|', ('partner_latitude', '!=', 0), ('partner_longitude', '!=', 0)]"/>
+                <filter string="Not located" name="not_located"
+                        domain="['&amp;', '|', ('partner_latitude', '=', False), ('partner_latitude', '=', 0),
+                                          '|', ('partner_longitude', '=', False), ('partner_longitude', '=', 0)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <!-- the map in the view switcher of Contacts and of Customers (Sales / Invoicing) -->
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+        <field name="view_mode">list,kanban,form,activity,map</field>
+    </record>
+    <record id="account.res_partner_action_customer" model="ir.actions.act_window">
+        <field name="view_mode">list,kanban,form,map</field>
+    </record>
+    <record id="account.res_partner_action_supplier" model="ir.actions.act_window">
+        <field name="view_mode">list,kanban,form,map</field>
+    </record>
+
+    <record id="action_partner_map" model="ir.actions.act_window">
+        <field name="name">Customer map</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">map,list,form</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="context">{'search_default_customer': 1, 'res_partner_search_mode': 'customer'}</field>
+    </record>
+
+    <menuitem id="menu_customer_map" name="Customer map"
+              parent="contacts.menu_contacts" action="action_partner_map" sequence="3"/>
+
+    <record id="action_supplier_map" model="ir.actions.act_window">
+        <field name="name">Vendor map</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">map,list,form</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="context">{'search_default_supplier': 1, 'res_partner_search_mode': 'supplier'}</field>
+    </record>
+
+    <menuitem id="menu_supplier_map" name="Vendor map"
+              parent="contacts.menu_contacts" action="action_supplier_map" sequence="4"/>
+</odoo>

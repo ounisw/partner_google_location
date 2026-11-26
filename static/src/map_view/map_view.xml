@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="partner_google_location.MapView">
+        <div t-attf-class="o_partner_map_view h-100 {{ props.className or '' }}">
+            <Layout className="'d-flex flex-column h-100'" display="props.display">
+                <t t-set-slot="control-panel-additional-actions">
+                    <CogMenu/>
+                </t>
+                <t t-set-slot="layout-actions">
+                    <SearchBar toggler="searchBarToggler"/>
+                </t>
+                <t t-set-slot="control-panel-navigation-additional">
+                    <t t-component="searchBarToggler.component" t-props="searchBarToggler.props"/>
+                </t>
+                <t t-set-slot="default">
+                    <div class="d-flex flex-column h-100 w-100">
+                        <div class="d-flex flex-wrap align-items-center gap-2 px-3 py-1 small text-muted border-bottom">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button type="button" t-attf-class="btn {{ state.baseLayer === 'plan' ? 'btn-primary' : 'btn-secondary' }}"
+                                        t-on-click="() => this.setBaseLayer('plan')">
+                                    <i class="fa fa-map-o me-1"/>Plan
+                                </button>
+                                <button type="button" t-attf-class="btn {{ state.baseLayer === 'satellite' ? 'btn-primary' : 'btn-secondary' }}"
+                                        t-on-click="() => this.setBaseLayer('satellite')">
+                                    <i class="fa fa-globe me-1"/>Satellite
+                                </button>
+                            </div>
+                            <span>
+                            <i class="fa fa-map-marker me-1 text-danger"/>
+                            <t t-out="state.located"/> / <t t-out="state.total"/>
+                            <span> located contacts</span>
+                            <span t-if="state.total > state.located" class="ms-2">
+                                (<t t-out="state.total - state.located"/> <span>without location: filter "Not located" to complete them</span>)
+                            </span>
+                            </span>
+                        </div>
+                        <div t-ref="map" class="flex-grow-1" style="min-height: 450px;"/>
+                    </div>
+                </t>
+            </Layout>
+        </div>
+    </t>
+</templates>

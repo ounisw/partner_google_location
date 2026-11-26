@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="partner_google_location.GoogleLocationField">
+        <div class="o_google_location w-100">
+            <t t-call="web.CharField"/>
+            <div class="d-flex flex-wrap gap-2 mt-1">
+                <a t-if="mapsUrl" class="btn btn-sm btn-link px-0" t-att-href="mapsUrl" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-map-marker me-1"/>Open in Google Maps
+                </a>
+                <a t-if="whatsappUrl" class="btn btn-sm btn-link px-0 text-success" t-att-href="whatsappUrl" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-whatsapp me-1"/>Share via WhatsApp
+                </a>
+                <button t-if="!props.readonly" type="button" class="btn btn-sm btn-link px-0" t-on-click="useMyPosition">
+                    <i class="fa fa-crosshairs me-1"/>My current position
+                </button>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="partner_google_location.GoogleLocationMapField">
+        <div class="o_google_location_map w-100">
+            <iframe t-if="embedUrl" t-att-src="embedUrl" class="w-100 border rounded"
+                    style="height: 450px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen="1"/>
+            <div t-else="" class="text-muted fst-italic">No location yet: paste a Google Maps link under the address.</div>
+        </div>
+    </t>
+
+    <t t-name="partner_google_location.GoogleLocationLinkField">
+        <span class="text-nowrap">
+            <a t-if="mapsUrl" t-att-href="mapsUrl" target="_blank" rel="noopener noreferrer"
+               class="o_google_location_link" t-on-click.stop="">
+                <i class="fa fa-map-marker me-1 text-danger"/>Google Maps
+            </a>
+            <a t-if="whatsappUrl" t-att-href="whatsappUrl" target="_blank" rel="noopener noreferrer"
+               class="ms-2 text-success" title="Share via WhatsApp" t-on-click.stop="">
+                <i class="fa fa-whatsapp fa-lg"/>
+            </a>
+        </span>
+    </t>
+</templates>

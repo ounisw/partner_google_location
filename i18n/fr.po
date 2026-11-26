@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr\n"
+
+#. module: partner_google_location
+#: model:ir.model.fields,field_description:partner_google_location.field_res_partner__location_url
+#: model:ir.model.fields,field_description:partner_google_location.field_res_users__location_url
+msgid "Location (Google Maps)"
+msgstr "Localisation (Google Maps)"
+
+#. module: partner_google_location
+#: model:ir.model.fields,help:partner_google_location.field_res_partner__location_url
+#: model:ir.model.fields,help:partner_google_location.field_res_users__location_url
+msgid "Paste the Google Maps share link of the customer location, or \"latitude, longitude\"."
+msgstr "Collez le lien de partage Google Maps de l'emplacement du client, ou « latitude, longitude »."
+
+#. module: partner_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_form_google_location
+msgid "Paste a Google Maps link..."
+msgstr "Collez un lien Google Maps..."
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.xml:0
+msgid "Open in Google Maps"
+msgstr "Ouvrir dans Google Maps"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.xml:0
+msgid "My current position"
+msgstr "Ma position actuelle"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.js:0
+msgid "This browser cannot give your position."
+msgstr "Ce navigateur ne peut pas donner votre position."
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.js:0
+msgid "Position not available: allow the location access in the browser."
+msgstr "Position indisponible : autorisez l'accès à la localisation dans le navigateur."
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.js:0
+msgid "Google Maps location"
+msgstr "Localisation Google Maps"
+
+#. module: partner_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_form_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_tree_google_location
+msgid "Location"
+msgstr "Localisation"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.xml:0
+msgid "No location yet: paste a Google Maps link under the address."
+msgstr "Pas encore de localisation : collez un lien Google Maps sous l'adresse."
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.js:0
+msgid "Google map"
+msgstr "Carte Google"
+
+#. module: partner_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_form_google_location
+msgid "Compute based on the Google Maps link"
+msgstr "Calculer depuis le lien Google Maps"
+
+#. module: partner_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_form_google_location
+msgid "Compute from the Google Maps link"
+msgstr "Calculer depuis le lien Google Maps"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.js:0
+msgid "Google Maps link"
+msgstr "Lien Google Maps"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/map_view/map_view.js:0
+#: model:ir.model.fields.selection,name:partner_google_location.selection__ir_actions_act_window_view__view_mode__map
+#: model:ir.model.fields.selection,name:partner_google_location.selection__ir_ui_view__type__map
+msgid "Map"
+msgstr "Carte"
+
+#. module: partner_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_search_location
+msgid "Located"
+msgstr "Localisé"
+
+#. module: partner_google_location
+#: model_terms:ir.ui.view,arch_db:partner_google_location.view_partner_search_location
+msgid "Not located"
+msgstr "Non localisé"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/map_view/map_view.xml:0
+msgid "located contacts"
+msgstr "contacts localisés"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/map_view/map_view.xml:0
+msgid "without location: filter \"Not located\" to complete them"
+msgstr "sans localisation : filtre « Non localisé » pour les compléter"
+
+#. module: partner_google_location
+#: model:ir.actions.act_window,name:partner_google_location.action_partner_map
+#: model:ir.ui.menu,name:partner_google_location.menu_customer_map
+msgid "Customer map"
+msgstr "Carte des clients"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/map_view/map_view.js:0
+msgid "Open"
+msgstr "Ouvrir"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/map_view/map_view.xml:0
+msgid "Plan"
+msgstr "Plan"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/map_view/map_view.xml:0
+msgid "Satellite"
+msgstr "Satellite"
+
+#. module: partner_google_location
+#. odoo-javascript
+#: code:addons/partner_google_location/static/src/google_location_field.xml:0
+#: code:addons/partner_google_location/static/src/map_view/map_view.js:0
+msgid "Share via WhatsApp"
+msgstr "Partager via WhatsApp"
+
+#. module: partner_google_location
+#: model:ir.actions.act_window,name:partner_google_location.action_supplier_map
+#: model:ir.ui.menu,name:partner_google_location.menu_supplier_map
+msgid "Vendor map"
+msgstr "Carte des fournisseurs"
